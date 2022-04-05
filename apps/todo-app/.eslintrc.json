@@ -25,6 +25,11 @@
             "prefix": "todo-example-app",
             "style": "kebab-case"
           }
+        ],
+        "quotes": [
+          "error",
+          "single",
+          { "avoidEscape": true, "allowTemplateLiterals": true }
         ]
       }
     },

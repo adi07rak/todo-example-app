@@ -1,0 +1,9 @@
+<a
+  [routerLink]="filter"
+  routerLinkActive
+  #rla="routerLinkActive"
+  [routerLinkActiveOptions]="{ exact: true }"
+  [ngStyle]="rla.isActive ? { 'text-decoration': 'none', color: 'black' } : {}"
+>
+  <ng-content></ng-content>
+</a>

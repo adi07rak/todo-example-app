@@ -1,0 +1,11 @@
+<ul *ngIf="todos.length; else elseBlock" data-cy="todo-list">
+  <todo-example-app-todo
+    *ngFor="let todo of todos"
+    [todo]="todo"
+    (toggleTodo)="toggleTodo.emit($event)"
+  >
+  </todo-example-app-todo>
+</ul>
+<ng-template #elseBlock>
+  <p>No todos found.</p>
+</ng-template>

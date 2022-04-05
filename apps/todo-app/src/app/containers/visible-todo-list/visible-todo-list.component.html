@@ -1,0 +1,10 @@
+<p *ngIf="loadingTodos$ | async" data-cy="loading-message">Loading...</p>
+<p *ngIf="todosError$ | async" data-cy="error-message">
+  Failed to fetch todos.
+</p>
+<todo-example-app-todo-list
+  *ngIf="!((loadingTodos$ | async) || (todosError$ | async))"
+  [todos]="visibleTodos$ | async"
+  (toggleTodo)="toggleTodo($event)"
+>
+</todo-example-app-todo-list>
