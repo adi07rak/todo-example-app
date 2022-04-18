@@ -1,0 +1,9 @@
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+
+    li,mat-icon {
+        cursor: pointer;
+    }
+}

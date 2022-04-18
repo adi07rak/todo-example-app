@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { InjectionToken, NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, InjectionToken, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
@@ -27,6 +27,8 @@ import {
   NoopInMemoryDataService,
 } from './services/noop-in-memory-data.service';
 import { environment } from '../environments/environment';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
 
 const routes: Routes = [
   {
@@ -85,6 +87,8 @@ export const getReducers = () => fromRoot.reducers;
         passThruUnknownUrl: isCypress,
       }
     ),
+    BrowserAnimationsModule,
+    MatIconModule,
   ],
   providers: [
     {
@@ -93,5 +97,6 @@ export const getReducers = () => fromRoot.reducers;
     },
   ],
   bootstrap: [AppComponent],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}

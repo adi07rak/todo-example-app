@@ -52,11 +52,22 @@ export class TodosEffects {
     this.actions$.pipe(
       ofType(TodosActions.toggleTodoRequest),
       mergeMap(({ payload }) =>
-        this.http.put('api/todos', payload).pipe(
+          this.http.put('api/todos', payload).pipe(
           map((updatedTodo: Todo) =>
             TodosActions.toggleTodoSuccess(normalize(updatedTodo, schema.todo))
           ),
           catchError(() => of(TodosActions.toggleTodoFailure()))
+        )
+      )
+    )
+  );
+
+  deleteTodo$ = createEffect(() => 
+    this.actions$.pipe(
+      ofType(TodosActions.deleteTodoRequest),
+      mergeMap(({ payload }) => this.http.delete('api/todos/'+payload.id).pipe(
+          map(() =>  TodosActions.deleteTodoSuccess(payload.id)),
+          catchError(() => of(TodosActions.deleteTodoFailure()))
         )
       )
     )
