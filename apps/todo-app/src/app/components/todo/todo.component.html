@@ -1,7 +1,10 @@
-<li
-  (click)="toggleTodo.emit(todo)"
-  [style.text-decoration]="todo.completed ? 'line-through' : 'none'"
-  data-cy="todo"
->
-  {{ todo.text }}
-</li>
+<div class="list-item">
+  <li
+    (click)="toggleTodo.emit(todo)"
+    [style.text-decoration]="todo.completed ? 'line-through' : 'none'"
+    data-cy="todo"
+  >
+    {{ todo.text }}
+  </li>
+  <mat-icon (click)="removeOne(todo)">delete_outline</mat-icon>
+</div>

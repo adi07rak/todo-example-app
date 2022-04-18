@@ -37,3 +37,15 @@ export const toggleTodoSuccess = createAction(
 );
 
 export const toggleTodoFailure = createAction('TOGGLE_TODO_FAILURE');
+
+export const deleteTodoRequest = createAction(
+  'DELETE_TODO_REQUEST',
+  (payload: any) => ({payload})
+);
+
+export const deleteTodoSuccess = createAction(
+  'DELETE_TODO_SUCCESS',
+  (payload: any) => ({payload})
+);
+
+export const deleteTodoFailure = createAction('DELETE_TODO_FAILURE');
