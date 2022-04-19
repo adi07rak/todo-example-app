@@ -1,2 +1,5 @@
-<input [(ngModel)]="value" data-cy="todo-input" />
-<button (click)="addTodo(value)" data-cy="submit">Add Todo</button>
+<div class="form-container">
+    <input [(ngModel)]="value" data-cy="todo-input" placeholder="Add New Task" />
+    <button (click)="addTodo(value)" data-cy="submit">Add Todo</button>
+</div>
+

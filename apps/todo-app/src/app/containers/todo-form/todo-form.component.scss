@@ -1,0 +1,25 @@
+.form-container {
+    padding:20px;
+    display: flex;
+    justify-content: space-between;
+    input {
+        width: 290px;
+        height: 30px;
+        margin-right:20px;
+        border: none;
+        padding: 5px 10px;
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 7%), 0 4px 6px -2px rgb(0 0 0 / 5%);;
+    }
+    input::placeholder {
+        font-size: 12px;
+        font-family: monospace;
+    }
+
+    button{
+        height: 36px;
+        border:none;
+        background-color: #1266f1;
+        color: white;
+        border-radius: 4px;
+    }
+}
